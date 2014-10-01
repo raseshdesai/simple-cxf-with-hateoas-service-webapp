@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>demo.cxf.restful</groupId>
+    <artifactId>cxf_rest_demo_app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>CXF REST Demo App</name>
+    <description>Simple CXF Java-first REST project using Spring configuration</description>
+
+    <!-- TODO Set env property -Dorg.apache.cxf.stax.allowInsecureParser=true in your server -->
+
+    <build>
+        <finalName>cxfrest</finalName>
+    </build>
+
+    <properties>
+        <spring.version>3.2.5.RELEASE</spring.version>
+        <cxf.version>3.0.0-milestone1</cxf.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- CXF REST Dependency -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <!-- End of CXF REST Dependency -->
+
+        <!-- Common CXF Dependency for http transport -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <!-- End of Common CXF Dependency for http transport -->
+
+        <!-- Support for JSON - after cxf v2.6.0 provider got moved into extentions - provider jar + additional required json implementers and dependencies -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-extension-providers</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jettison</groupId>
+            <artifactId>jettison</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <!-- End of Support for JSON - after cxf v2.6.0 provides got moved into extentions-provider jar + additional required json implementers and dependencies -->
+
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm-all</artifactId>
+            <version>3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

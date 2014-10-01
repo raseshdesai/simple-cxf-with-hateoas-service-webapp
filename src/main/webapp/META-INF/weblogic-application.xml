@@ -1,0 +1,4 @@
+<prefer-application-packages>
+    <package-name>com.ctc.wstx.*</package-name>
+    <package-name>org.apache.*</package-name>
+</prefer-application-packages>
